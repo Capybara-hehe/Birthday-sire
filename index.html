@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Lipi!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+    body {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(to right, #fbc2eb, #a18cd1); /* light pink + light purple */
+      overflow-x: hidden;
+      padding: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      background: #ff7f50;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      margin-top: 30px;
+      box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    h1 {
+      font-size: 50px;
+      color: #fff;
+      text-shadow: 2px 2px 5px #ff69b4;
+    }
+    p {
+      font-size: 26px;
+      color: #fff;
+    }
+    .kaomoji {
+      font-size: 70px;
+      margin-top: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 5px #d291bc;
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      top: -10px;
+      animation: fall 3s linear infinite;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+      }
+    }
+    .big-message {
+      font-size: 28px;
+      color: #fff;
+      margin-top: 30px;
+      background: rgba(255, 182, 193, 0.9);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="celebrate()">Press me Lipi 🎉</button>
+
+  <div id="celebration" class="hidden">
+    <h1>🎂🎉 Happy Birthday Lipi! 🎈🥳</h1>
+    <p>You're finally older than me again! 😆🎁</p>
+    <div class="kaomoji">(❁´◡`❁)</div>
+    <br>
+    <button onclick="showMessage()">Open your birthday note 💌</button>
+    <div id="message" class="big-message hidden">
+      🎉 Hey Lipi!! 🎉  
+      You're finally 17!!!! 🥳🎂🎈  
+      Congratss!! 🎁✨  
+      You have your exams going on too 😞📚 sooo sadd!  
+      But I believe in you 💪🌟 and I'll support you in every step of your life 💖  
+      I want to wish you the happiest birthday ever!!!! 🎂🎉🎈🎊  
+      Have lots of funnn 🥳🎁💐🎶  
+
+      – Capy 🐻💕
+    </div>
+  </div>
+
+  <script>
+    function celebrate() {
+      document.getElementById('celebration').classList.remove('hidden');
+      for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.backgroundColor = 
+          'hsl(' + Math.random() * 360 + ',100%,50%)';
+        confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 4000);
+      }
+    }
+
+    function showMessage() {
+      document.getElementById('message').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>http://localhost:8158/__unsaved_file__
